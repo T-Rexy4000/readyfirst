@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jordan Walters — ReadyFirst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #344D8E;
+      --cyan:   #83E4F1;
+      --bg:     #0e1828;
+      --surface:#132040;
+      --border: rgba(131,228,241,0.15);
+      --text:   #f0f4ff;
+      --muted:  rgba(240,244,255,0.45);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 50% at 50% -10%, rgba(52,77,142,0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 100% 110%, rgba(131,228,241,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      max-width: 400px;
+      width: 100%;
+      overflow: hidden;
+      animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(131,228,241,0.05);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .stripe {
+      height: 5px;
+      background: linear-gradient(90deg, var(--navy), var(--cyan));
+    }
+
+    .card-inner {
+      padding: 2.2rem 2.2rem 2rem;
+    }
+
+    .logo-wrap {
+      margin-bottom: 1.8rem;
+    }
+
+    .logo-wrap img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .name-underline {
+      width: 2.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      margin: 0.75rem 0 1.6rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .info-list li {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 600;
+      opacity: 0.75;
+    }
+
+    .value {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    .value a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .value a:hover { color: var(--cyan); }
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: var(--navy);
+      border: 1px solid rgba(131,228,241,0.3);
+      color: var(--cyan);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      border-radius: 2px;
+    }
+
+    .cta:hover {
+      background: rgba(52,77,142,0.8);
+      border-color: var(--cyan);
+      color: #fff;
+    }
+
+    .card-footer {
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="stripe"></div>
+    <div class="card-inner">
+      <div class="logo-wrap">
+        <img src="logo.svg" alt="ReadyFirst" />
+      </div>
+      <h1>Jordan Walters</h1>
+      <div class="name-underline"></div>
+      <ul class="info-list">
+        <li><span class="label">Phone</span><span class="value"><a href="tel:+17658911242">+1 (765) 891-1242</a></span></li>
+        <li><span class="label">Email</span><span class="value"><a href="mailto:jwalters@fawkes-consult.com">jwalters@fawkes-consult.com</a></span></li>
+        <li><span class="label">Business</span><span class="value">ReadyFirst</span></li>
+        <li><span class="label">Website</span><span class="value"><a href="https://fawkesinitiative.com" target="_blank">fawkesinitiative.com</a></span></li>
+      </ul>
+      <a href="contact.vcf" download="Jordan_Walters.vcf" class="cta">↓ Save Contact</a>
+      <p class="card-footer">ReadyFirst &nbsp;·&nbsp; Tap to save</p>
+    </div>
+  </div>
+</body>
+</html>
